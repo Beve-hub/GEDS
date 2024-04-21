@@ -31,8 +31,9 @@ html{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --primary-color:#300193;
-  --primary-t-color:#30019340;
+  --primary-color:#2f0095;
+  --primary-t-color:#2f0193aa;
+  --secondary-t-color:#89909f;
   --text-color:#121212;
   --bg-color: #fff;
   --button-color: #FF9900;
