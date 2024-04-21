@@ -3,6 +3,7 @@ import Hero from './screen/Hero'
 import Parcel from './screen/Parcel'
 import Package from './screen/Package'
 import Footer from './screen/Footer'
+import Review from './screen/Review'
 
 interface Props {
   
@@ -14,6 +15,7 @@ const Home: React.FC<Props> = () => {
       <Hero/>
       <Parcel/>
       <Package/>
+      <Review/>
       <Footer/>
     </div>
   )

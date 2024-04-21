@@ -1,8 +1,8 @@
 import img from '../../../assets/image/image_5.png';
-import { SlCalender } from "react-icons/sl";
-import { BsTruck } from "react-icons/bs";
-import { GrLocation } from "react-icons/gr";
-import { AiOutlineDollarCircle } from "react-icons/ai";
+import { TbTrain } from "react-icons/tb";
+import { FaTruck } from "react-icons/fa";
+import { FaPlaneArrival } from "react-icons/fa";
+import { RiShip2Fill } from "react-icons/ri";
 
 
 
@@ -16,27 +16,27 @@ const Package: React.FC = () => {
             <div className='p-6'>              
             <p className='font-bold py-4 text-2xl text-[#121212]'>PACKING & STORAGE</p>
                 <p className='py-4 text-lg text-[#121212] font-medium '>For Business Only</p>
-                <p className='text-light text-[#121212] text-balance md:text-balance'>GEDS Bringing you industry-specific expertise; whatever you’re shipping, wherever you’re shipping it.</p>
+                <p className='w-[35rem] text-light text-[#121212] text-balance md:text-balance'>GEDS Bringing you industry-specific expertise; whatever you’re shipping, wherever you’re shipping it.</p>
              
             </div>
               <div className='bg-[--secondary-t-color] my-2 py-2'>
-              <p className='p-2 text-lg text-[#121212] font-medium text-start sm:text-center'>Manage your shipments</p>
+              <p className='p-2 text-lg text-[#121212] font-medium text-start sm:text-center'>Services Available</p>
               <div className='  grid  items-center md:grid-cols-2 gap-4 px-10 '>
                 <div className='flex items-center gap-4'>
-                <SlCalender color='white' size={24} className="p-1 rounded-lg bg-[--primary-t-color]"/>
-                  <p>Book a shippment</p>
+                <FaTruck color='white' size={24} className="p-1 rounded-lg bg-[--primary-t-color]"/>
+                  <p>Road Freight</p>
                 </div>
                 <div className='flex items-center gap-4'>
-                <GrLocation color='white' size={24} className="p-1 rounded-lg bg-[--primary-t-color]"/>
-                  <p>Find Location</p>
+                <FaPlaneArrival   color='white' size={24} className="p-1 rounded-lg bg-[--primary-t-color]"/>
+                  <p>Air Freight</p>
                 </div>
                 <div className='flex items-center gap-4'>
-                <BsTruck color='white' size={24} className="p-1 rounded-lg bg-[--primary-t-color]"/>
-                  <p>Redirect your Package</p>
+                <RiShip2Fill  color='white' size={24} className="p-1 rounded-lg bg-[--primary-t-color]"/>
+                  <p>Ocean Freight</p>
                 </div>
                 <div className='flex items-center gap-4'>
-                <AiOutlineDollarCircle color='white' size={24} className="p-1 rounded-lg bg-[--primary-t-color]"/>
-                  <p>Fuel Surcharge</p>
+                <TbTrain color='white' size={24} className="p-1 rounded-lg bg-[--primary-t-color]"/>
+                  <p>Rail Freight</p>
                 </div>
               </div>              
               </div>
