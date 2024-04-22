@@ -7,19 +7,19 @@ import { FaUserTie } from "react-icons/fa";
 
 const Geds: React.FC = () => {
     return (
-        <section  className="min-h-[30rem] py-20 flex md:flex-row grid-col-2 items-center justify-center ">
+        <section  className="min-h-[30rem] my-16 flex md:flex-row grid-col-2 items-center justify-center ">
 
         <div>
         <div className='p-6'>              
-                <p className='font-bold py-4 text-2xl text-[#121212]'>GRAND EXPRESS DELIVERY SERVICE (GEDS)</p>
+                <p className='font-bold py-4 text-2xl text-[--primary-color]'>GRAND EXPRESS DELIVERY SERVICE (GEDS)</p>
                     <p className='py-4 text-lg text-[#121212] font-medium '>The undisputed global leader in international express shipping</p>
-                    <p className='text-light text-[#121212] text-balance md:text-balance'>When your shipment needs to be there fast, choose the International Specialists for quick, reliable expedited shipments to and from more than 220 countries and territories.</p>
+                    <p className='max-w-[75rem] text-light text-[#121212] text-balance md:text-balance'>When your shipment needs to be there fast, choose the International Specialists for quick, reliable expedited shipments to and from more than 220 countries and territories.</p>
                  
         </div>
         <div>
 
       
-          <div className='flex gap-2 md:grid-cols-2 '> 
+          <div className='flex items-center gap-2 md:grid-cols-2 '> 
             
            
     
@@ -37,17 +37,7 @@ const Geds: React.FC = () => {
              
                </div>
 
-               <div className='bg-[--bg-color] drop-shadow-xl py-4 max-w-[15rem] '>
-                 <div className='grid items-center gap-4 p-4'>
-                  <MdTimer color='#2f0095' size={30} />
-                    <p className='font-bold text-md text-[#FD715E]'>Extraordinary Speed</p>
-                    <div>
-                        <p>We leverage our unrivaled global expertise and Customs know-how to keep your shipments moving swiftly – providing door-to-door expedited shipment delivery on the next possible business day.</p>
-                    </div>
-                  </div>                           
-             
-               </div>
-
+              
                <div className='bg-[--bg-color] drop-shadow-xl py-4 max-w-[15rem] '>
                  <div className='grid items-center gap-4 p-4'>
                   <RiCustomerServiceFill color='#2f0095' size={30} />
@@ -65,6 +55,18 @@ const Geds: React.FC = () => {
                     <p className='font-bold text-md text-[#FD715E]'>Trusted Advice</p>
                     <div>
                         <p>We are passionate about helping GEDS customers succeed by guiding you into new markets to achieve international growth and maximize your cross-border potential.</p>
+                    </div>
+                  </div>                           
+             
+               </div>
+
+
+               <div className='bg-[--bg-color] drop-shadow-xl py-4 max-w-[15rem] '>
+                 <div className='grid items-center gap-4 p-4'>
+                  <MdTimer color='#2f0095' size={30} />
+                    <p className='font-bold text-md text-[#FD715E]'>Extraordinary Speed</p>
+                    <div>
+                        <p>We leverage our unrivaled global expertise and Customs know-how to keep your shipments moving swiftly – providing door-to-door expedited shipment delivery on the next possible business day.</p>
                     </div>
                   </div>                           
              

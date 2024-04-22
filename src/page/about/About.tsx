@@ -1,6 +1,7 @@
 import React from 'react'
 import Geds from './screen/Geds'
 import Header from './screen/Header'
+import Managment from './screen/Managment'
 import Footer from '../home/screen/Footer'
 
 
@@ -9,6 +10,7 @@ const About: React.FC<Props> = () => {
         <div>
             <Header/>
             <Geds/>
+            <Managment/>
             <Footer/>
         </div>
     )

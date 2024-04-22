@@ -1,5 +1,5 @@
 import React from 'react'
-import IMG from '../../../assets/image/image_about.png'
+import IMG from '../../../assets/image/image_service.png'
 
 const Header: React.FC = () => {
     return (
