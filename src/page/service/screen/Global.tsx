@@ -1,6 +1,5 @@
 import img from '../../../assets/image/image_7.png';
 import { FaTruck, FaPlaneArrival } from "react-icons/fa";
-import { MdTimer } from "react-icons/md";
 import { RiShip2Fill } from "react-icons/ri";
 import { TbTrain } from "react-icons/tb";
 

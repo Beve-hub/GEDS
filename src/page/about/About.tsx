@@ -5,7 +5,7 @@ import Managment from './screen/Managment'
 import Footer from '../home/screen/Footer'
 
 
-const About: React.FC<Props> = () => {
+const About: React.FC = () => {
     return (
         <div>
             <Header/>

@@ -5,9 +5,9 @@ import Logo from '../assets/image/logo.png';
 import { navbar } from './../utils/data/data';
 import { NavLink } from 'react-router-dom';
 
-interface Props {}
 
-const Navbar = (props: Props) => {
+
+const Navbar = () => {
   const [nav, setNav ] = useState<boolean>(true);
   const flexBetween = 'flex items-center justify-between';
 
