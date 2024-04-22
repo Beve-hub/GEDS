@@ -1,15 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import img from '../../../assets/image/image_1.png';
+import img2 from '../../../assets/image/image_2.png';
+import img3 from '../../../assets/image/image_3.png';
 
+
+const images = [img, img2, img3 ]
 
 const Hero: React.FC = () => {
+  const [current, setCurrent ] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prevIndex) => 
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section id="home" className="min-h-screen overflow-hidden">
       <div>
         <div  className="keen-slider" >
-          <div className="keen-slider__slide">
-            <img src={img} className="w-screen object-cover h-screen" alt="" />
+          <div className="relative h-screen">
+           {images.map((image, index) => (
+            <div key={index} className={`absolute top-0 left-0 w-[100rem] h-screen transition-opacity duration-1000 ${
+              index === current ? 'opacity-100' : 'opacity-0'
+            }`} style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', width:'100rem'}} />
+           ))}
           </div>
           
         </div>
