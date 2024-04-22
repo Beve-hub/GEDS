@@ -32,7 +32,7 @@ html{
   -moz-osx-font-smoothing: grayscale;
 
   --primary-color:#2f0095;
-  --primary-t-color:#2f0193aa;
+  --primary-t-color:rgb(72, 55, 255);
   --secondary-t-color:#89909f;
   --text-color:#121212;
   --bg-color: #fff;

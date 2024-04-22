@@ -8,15 +8,15 @@ import { RiShip2Fill } from "react-icons/ri";
 
 const Package: React.FC = () => {
   return (
-    <section  className="min-h-[30rem] py-20 flex  md:flex-row grid-col-2 items-center justify-center ">
+    <section  className="min-h-[30rem]  py-20 flex  md:flex-row grid-col-2 items-center justify-center ">
     <div>
-      <div className='flex gap-2 md:grid-cols-2 '>
+      <div className='max-w-[1100px] flex gap-2 md:grid-cols-2 '>
        
           <div className='bg-[--bg-color] drop-shadow-xl py-4'>
             <div className='p-6'>              
             <p className='font-bold py-4 text-2xl text-[#121212]'>PACKING & STORAGE</p>
                 <p className='py-4 text-lg text-[#121212] font-medium '>For Business Only</p>
-                <p className='w-[35rem] text-light text-[#121212] text-balance md:text-balance'>GEDS Bringing you industry-specific expertise; whatever you’re shipping, wherever you’re shipping it.</p>
+                <p className=' text-light text-[#121212] text-balance md:text-balance'>GEDS Bringing you industry-specific expertise; whatever you’re shipping, wherever you’re shipping it.</p>
              
             </div>
               <div className='bg-[--secondary-t-color] my-2 py-2'>
