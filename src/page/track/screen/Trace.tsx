@@ -15,7 +15,7 @@ const Trace: React.FC = () => {
                 <p className='px-4'>Find the status of your in transit shipment</p>
              <div className=' max-w-[50rem]  gap-4 flex justify-start items-center md:grid-cols-2 px-4 '>  
              <div className="flex gap-1 mt-4">
-              <input type="text" placeholder="Tracking Number" className="h-full bg-transparent border-2 border-[--primary-color] py-3 pl-2 pr-24 text-gray-500 sm:text-sm" />
+              <input type="text" placeholder="Tracking Number" className="h-full bg-transparent border-2 border-[--primary-color] py-3 pl-2 pr-22 text-gray-500 sm:text-sm" />
               <button className="bg-[--primary-color] text-[--bg-color]  py-[0.6rem] px-5">Track</button>
             </div>           
           </div>      
