@@ -14,20 +14,20 @@ const Hero: React.FC = () => {
       setCurrent((prevIndex) => 
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section id="home" className="min-h-screen overflow-hidden">
+    <section id="home" className="min-h-screen w-[94.9rem] overflow-hidden">
       <div>
-        <div  className="keen-slider" >
+        <div  >
           <div className="relative h-screen">
            {images.map((image, index) => (
-            <div key={index} className={`absolute top-0 left-0 w-[100rem] h-screen transition-opacity duration-1000 ${
+            <div key={index} className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ${
               index === current ? 'opacity-100' : 'opacity-0'
-            }`} style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', width:'100rem'}} />
+            }`} style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover', }} />
            ))}
           </div>
           
