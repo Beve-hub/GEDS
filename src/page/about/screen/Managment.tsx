@@ -2,6 +2,12 @@ import img from '../../../assets/image/image_team.png';
 import img2 from '../../../assets/image/image_team2.png';
 import img3 from '../../../assets/image/image_team3.png';
 import img4 from '../../../assets/image/image_team4.png';
+import img5 from '../../../assets/image/image_logo3.png';
+import img6 from '../../../assets/image/image_logo2.png';
+import img7 from '../../../assets/image/image_logo1.png';
+import img8 from '../../../assets/image/image_logo6.png';
+import img9 from '../../../assets/image/image_logo5.png';
+import img10 from '../../../assets/image/image_logo4.png';
 
 
 
@@ -49,7 +55,14 @@ const Managment: React.FC = () => {
                 </div>
             </div>
         </div>
-        
+        <div className='  mt-10 grid items-center md:grid-cols-6  mx-20 '>
+        <img src={img8} alt='' className='w-[7rem]'/>
+        <img src={img9} alt='' className='w-[7rem]'/>
+        <img src={img10} alt='' className='w-[7rem]'/>
+        <img src={img7} alt='' className='w-[7rem]'/>
+        <img src={img5} alt='' className='w-[7rem]'/>
+        <img src={img6} alt='' className='w-[7rem]'/>
+    </div> 
        <div>
 
        </div>

@@ -15,7 +15,7 @@ const Navbar = (props: Props) => {
     setNav(!nav)
   } 
   return (
-    <div className={`${flexBetween} fixed top-0 z-30 w-full bg-white`}>
+    <div className={`${flexBetween} fixed top-0 z-30 w-full bg-[#ededed90]`}>
       <div className='mx-auto w-[80rem]'>
         <div className='flex items-center  '>
           <div onClick={handleNav} className='block md:hidden ml-4 '>

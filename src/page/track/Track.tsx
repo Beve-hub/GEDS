@@ -1,13 +1,13 @@
-import React from 'react'
+import Footer from "../home/screen/Footer"
+import Header from "./screen/Header"
+import Trace from "./screen/Trace"
 
-interface Props {
-    
-}
-
-const Track: React.FC<Props> = () => {
+const Track: React.FC= () => {
     return (
         <div>
-            
+            <Header/>
+            <Trace/>
+            <Footer/>
         </div>
     )
 }
