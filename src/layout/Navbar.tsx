@@ -15,7 +15,7 @@ const Navbar = () => {
     setNav(!nav)
   } 
   return (
-    <div className={`${flexBetween} fixed top-0 z-30 w-full bg-[#ededed90]`}>
+    <div className={`${flexBetween} fixed top-0 z-30 w-full bg-[--bg-color]`}>
       <div className='mx-auto w-[80rem]'>
         <div className='flex items-center  '>
           <div onClick={handleNav} className='block md:hidden ml-4 '>
@@ -37,7 +37,7 @@ const Navbar = () => {
         </div>
         </div>
 
-        <div className='w-full p-6 bg-[--primary-color] md:flex hidden'>
+        <div className=' justify-center p-6 bg-[--primary-color] sm:flex hidden'>
           <div className='mx-[10rem]'>
             <ul className={`${flexBetween} mx-[8rem] w-[40rem]`}>
               {navbar.map((item) => (

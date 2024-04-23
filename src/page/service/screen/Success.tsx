@@ -19,14 +19,15 @@ const Success: React.FC = () => {
             </div>            
           </div>      
          </div>
-         <div className='  mt-10 grid items-center md:grid-cols-6  mx-20 '>
+
+         <div className="grid grid-cols-3 md:grid-cols-6 gap-4 mx-20">
         <img src={img} alt='' className='w-[7rem]'/>
         <img src={img2} alt='' className='w-[7rem]'/>
         <img src={img3} alt='' className='w-[7rem]'/>
         <img src={img7} alt='' className='w-[7rem]'/>
         <img src={img5} alt='' className='w-[7rem]'/>
         <img src={img6} alt='' className='w-[7rem]'/>
-    </div> 
+      </div> 
     </div>    
       </section>
     )

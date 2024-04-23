@@ -47,8 +47,8 @@ const Review: React.FC = () => {
             </div>
 
             <div className='grid justify-center mt-7'>
-              <p className='text-2xl font-bold text-[--primary-color]'>{test[current].name}</p>
-              <p className='text-[--button-color]'>{test[current].position}</p>
+              <p className='text-2xl font-bold text-[--primary-color] text-center'>{test[current].name}</p>
+              <p className='text-[--button-color] text-center'>{test[current].position}</p>
             </div>
           </div>
 
@@ -70,7 +70,7 @@ const Review: React.FC = () => {
       
 
 
-    <div className=' grid  items-center md:grid-cols-6  mx-20 '>
+      <div className="grid grid-cols-3 md:grid-cols-6 gap-4 mx-20">
         <img src={img} alt='' className='w-[7rem]'/>
         <img src={img2} alt='' className='w-[7rem]'/>
         <img src={img3} alt='' className='w-[7rem]'/>
