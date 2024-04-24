@@ -10,7 +10,9 @@ import html2canvas from 'html2canvas';
 
 
 const Receipt: React.FC = () => {
-    const formData = JSON.parse(localStorage.getItem('formData') || '{}');
+    const senderInfo = JSON.parse(localStorage.getItem('senderInfo') || '{}');
+    const receiverInfo = JSON.parse(localStorage.getItem('receiverInfo') || '{}');
+    const packageInfo = JSON.parse(localStorage.getItem('packageInfo') || '{}');
 
     const receiptRef = useRef<HTMLDivElement>(null);
 
@@ -18,24 +20,23 @@ const Receipt: React.FC = () => {
         if (!receiptRef.current) return;
 
         try {
-            const canvas = await html2canvas(receiptRef.current);
+            const canvas = await html2canvas(receiptRef.current, { scrollY: -window.scrollY });
             const imgData = canvas.toDataURL('image/png');
             const pdf = new jsPDF('p', 'px', 'a4');
 
-            const imgWidth = "400";
-            const pageHeight = "495";
+            const imgWidth = pdf.internal.pageSize.getWidth();
             const imgHeight = (canvas.height * imgWidth) / canvas.width;
             let heightLeft = imgHeight;
             let position = 0;
-
-            pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-            heightLeft -= pageHeight;
+            const pageHeight = pdf.internal.pageSize.getHeight();
 
             while (heightLeft >= 0) {
-                position = heightLeft - imgHeight;
-                pdf.addPage();
                 pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
                 heightLeft -= pageHeight;
+                position -= pageHeight; // Adjust position for the next page
+                if (heightLeft > 0) {
+                    pdf.addPage();
+                }
             }
 
             pdf.save('receipt.pdf');
@@ -43,11 +44,11 @@ const Receipt: React.FC = () => {
             console.error('Error generating PDF:', error);
         }
     };
- 
+
     return (
-        <div className="relative h-screen w-screen grid items-center justify-center mt-10">
+        <div className="relative h-screen w-screen grid items-center justify-center mt-10 mx-10">
            <button onClick={generatePDF} className='text-lg py-4'>Save as PDF</button>
-            <div >
+            <div ref={receiptRef} className='mx-10'>
                 <header>
                     <div className='flex items-center justify-around gap-6'>
                     <div>
@@ -73,51 +74,51 @@ const Receipt: React.FC = () => {
 
                 <div>
                  <p className='bg-[--primary-color] text-[--bg-color] p-1 text-md'>FROM (SENDER)</p>
-                 <div className='flex items-start justify-between'>
+                 <div className='flex items-start justify-between '>
                     <div>
 
                     <div>
                         <div className='flex items-center gap-12 bg-[#ededed] my-1 px-2'>
                         <p className='font-bold text-lg'>Sender:</p>
-                        <p className='font-bold text-lg'>collins jerry</p>
+                        <p className='font-bold text-lg'>{senderInfo.name}</p>
                         </div>    
 
                         <div className='flex items-center gap-10 my-1 px-2'>
                         <p className='font-bold text-lg text-start'>Address:</p>
-                        <p className='text-lg text-start'> United kingdom, london</p>
+                        <p className='text-lg text-start'> {senderInfo.address}</p>
                         </div>    
 
                         <div className='flex items-center gap-6 bg-[#ededed] my-1 px-2'>
                         <p className='font-bold text-lg'>Phone No:</p>
-                        <p className='text-lg text-start'>+66 78 945 543</p>
+                        <p className='text-lg text-start'>{senderInfo.phone}</p>
                         </div>                        
                     </div>
 
                     <div>
                     <p className='bg-[--primary-color] mt-4 text-[--bg-color] p-1'>TO (RECEIVE)</p>
-                    <div className='flex items-center gap-9 bg-[#ededed] my-1 px-2'>
+                        <div className='flex items-center gap-9 bg-[#ededed] my-1 px-2'>
                         <p className='font-bold text-lg '>Receiver:</p>
-                        <p className='font-bold text-lg '>Bollins jerry</p>
+                        <p className='font-bold text-lg '>{receiverInfo.name}</p>
                         </div>    
 
                         <div className='flex items-center gap-10 my-1 px-2'>
                         <p className='font-bold text-lg '>Address:</p>
-                        <p className='text-lg '>United kingdom, london</p>
+                        <p className='text-lg '>{receiverInfo.address}</p>
                         </div>    
 
                         <div className='flex items-center gap-[4rem] bg-[#ededed] my-1 px-2'>
                         <p className='font-bold text-lg '>Email:</p>
-                        <p className=' text-lg '>love@gmail.com</p>
+                        <p className=' text-lg '>{receiverInfo.email}</p>
                         </div> 
 
                         <div className='flex items-center gap-4 my-1 px-2'>
                         <p className='font-bold text-lg  '>Destination:</p>
-                        <p className='text-lg '>Brazil</p>
+                        <p className='text-lg '>{packageInfo.destination}</p>
                         </div> 
 
                         <div className='flex items-center gap-6 bg-[#ededed] my-1 px-2'>
                         <p className='font-bold text-lg '>Phone No:</p>
-                        <p className='text-lg '>+66 78 945 543</p>
+                        <p className='text-lg '>{receiverInfo.phone}</p>
                         </div>                        
                     </div>
 
@@ -132,8 +133,8 @@ const Receipt: React.FC = () => {
                         </div>    
 
                         <div className='flex items-center gap-9 bg-[#ededed] my-1 px-2'>
-                        <p className='text-lg '>lONDON</p>
-                        <p className=' text-lg '>BRAZIL</p>
+                        <p className='text-lg '>{packageInfo.origin}</p>
+                        <p className=' text-lg '>{packageInfo.destination}</p>
                         </div>                                                  
                     </div>
 
@@ -145,18 +146,18 @@ const Receipt: React.FC = () => {
                         </div>    
 
                         <div className='flex items-center gap-[8rem] my-1 px-2'>
-                        <p className='text-lg '>1</p>
-                        <p className='text-lg '>110 Kg</p>
+                        <p className='text-lg '>{packageInfo.quantity}</p>
+                        <p className='text-lg '>{packageInfo.weight} Kg</p>
                         </div>                                                  
                     </div>
 
                     <div>
                     <p className='font-bold text-lg border-b-2 mt-4  p-1'>Shipment</p>
-                    <p className='font-bold text-lg'>500 USD</p>  
+                    <p className='font-bold text-lg'>{packageInfo.amount}</p>  
 
                         <div className='flex items-center bg-[--primary-color] gap-10 my-4 px-2 ' >
                         <p className='text-lg text-[--bg-color] py-1'>Total Charges :</p>
-                        <p className='text-lg text-[--bg-color]  '>500 USD</p>
+                        <p className='text-lg text-[--bg-color]  '>{packageInfo.amount}</p>
                         </div>                                                  
                     </div>
 
@@ -165,6 +166,7 @@ const Receipt: React.FC = () => {
 
 
                  </div>
+                 <footer>
                  <div className='mt-6'>
                    <img src={img1} alt='' className="absolute left-[60rem] w-[15rem]  "/> 
                  <p className='w-[50rem]'> Any shortage or damage must be notified within 72hours of goods. Complaints can only be accepted if 
@@ -172,6 +174,7 @@ const Receipt: React.FC = () => {
                   Delivery Services.  </p> 
                  </div>
                  <img src={img2} alt='' className=" w-[20rem]  "/> 
+                 </footer>
                 </div>
                 
             </div>

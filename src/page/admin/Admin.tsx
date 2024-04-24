@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface Props {}
 
 const Admin: React.FC<Props> = () => {
+  const navigate = useNavigate(); 
+
   const [senderInfo, setSenderInfo] = useState({
     name: '',
     address: '',
@@ -52,15 +55,16 @@ const Admin: React.FC<Props> = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-     // Save form details to local storage
+   
      localStorage.setItem('senderInfo', JSON.stringify(senderInfo));
      localStorage.setItem('receiverInfo', JSON.stringify(receiverInfo));
      localStorage.setItem('packageInfo', JSON.stringify(packageInfo));
  
-     // Optionally, you can clear the form after submission
      setSenderInfo({ name: '', address: '', phone: '' });
      setReceiverInfo({ name: '', address: '', phone: '', email: '' });
      setPackageInfo({ origin: '', destination: '', quantity: '', weight: '', fragile: false, amount: '' });
+
+     navigate('/Receipt');
   };
 
   return (
