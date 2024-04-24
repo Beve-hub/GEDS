@@ -4,10 +4,12 @@ import { FaFacebook } from "react-icons/fa6";
 import { BsYoutube } from "react-icons/bs";
 import { TfiGoogle } from "react-icons/tfi";
 import { FaXTwitter } from "react-icons/fa6";
+import { useNavigate } from 'react-router-dom';
 
 
 
 const Footer: React.FC= () => {
+  const navigate = useNavigate(); 
   return (
     <section id="join" className="min-h-[20rem] max-w-full bg-[--primary-color] ">
      
@@ -97,7 +99,7 @@ const Footer: React.FC= () => {
 <div className='mx-auto grid py-4  items-center md:grid-cols-2 gap-4 px-8 mt-4'>
 
 <div>
- <p className='text-[#EBEBEB50] text-sm '>Copyright © 1998-2024, Grand  Express Delivery Services </p>
+ <button onClick={() => navigate('/Admin')}  className='text-[#EBEBEB50] text-m '>Copyright © 1998-2024, Grand  Express Delivery Services </button>
  </div> 
 
 
