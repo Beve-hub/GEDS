@@ -7,6 +7,7 @@ import About from './page/about/About';
 import Track from './page/track/Track';
 import Service from './page/service/Service';
 import Contact from './page/contact/Contact';
+import Admin from './page/admin/Admin';
 
 
 
@@ -25,6 +26,7 @@ function App() {
       <Route path='Track' element={<Track/>} />
       <Route path='Service' element={<Service/>} />
       <Route path='Contact' element={<Contact/>} />
+      <Route path='Admin' element={<Admin/>} />
      </Routes>
     </Router>
   )
