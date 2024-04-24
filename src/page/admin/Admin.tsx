@@ -52,6 +52,15 @@ const Admin: React.FC<Props> = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+     // Save form details to local storage
+     localStorage.setItem('senderInfo', JSON.stringify(senderInfo));
+     localStorage.setItem('receiverInfo', JSON.stringify(receiverInfo));
+     localStorage.setItem('packageInfo', JSON.stringify(packageInfo));
+ 
+     // Optionally, you can clear the form after submission
+     setSenderInfo({ name: '', address: '', phone: '' });
+     setReceiverInfo({ name: '', address: '', phone: '', email: '' });
+     setPackageInfo({ origin: '', destination: '', quantity: '', weight: '', fragile: false, amount: '' });
   };
 
   return (
@@ -260,7 +269,7 @@ const Admin: React.FC<Props> = () => {
               </div>              
             </div>
             <div className="mt-6">
-                <button type="submit" className="w-[21rem] text-[--bg-color] bg-[--primary-color] py-3">
+                <button type="submit" className="w-[20rem] text-[--bg-color] bg-[--primary-color] py-3">
                   Submit
                 </button>
               </div>

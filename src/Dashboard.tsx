@@ -10,7 +10,7 @@ const DashBoard: React.FC<Props> = ({ children }) => {
   const [show, setShow] = useState<boolean>(false);
 
   useEffect(() => {
-    if (location.pathname === '/Login' ) {
+    if (location.pathname === '/Login' | location.pathname === '/Receipt'  ) {
       setShow(false);
     } else {
       setShow(true);

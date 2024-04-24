@@ -8,6 +8,7 @@ import Track from './page/track/Track';
 import Service from './page/service/Service';
 import Contact from './page/contact/Contact';
 import Admin from './page/admin/Admin';
+import Receipt from './page/receipt/Receipt';
 
 
 
@@ -27,6 +28,7 @@ function App() {
       <Route path='Service' element={<Service/>} />
       <Route path='Contact' element={<Contact/>} />
       <Route path='Admin' element={<Admin/>} />
+      <Route path='Receipt' element={<Receipt/>} />
      </Routes>
     </Router>
   )
