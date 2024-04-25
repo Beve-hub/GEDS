@@ -5,11 +5,14 @@ import img1 from '../../assets/image/stamp.png'
 import img2 from '../../assets/image/sign.png'
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+import {useLocation} from 'react-router-dom';
 
 
 
 
 const Receipt: React.FC = () => {
+    const location = useLocation();
+    const trackingNumber = location.state?.trackingNumber;
     const senderInfo = JSON.parse(localStorage.getItem('senderInfo') || '{}');
     const receiverInfo = JSON.parse(localStorage.getItem('receiverInfo') || '{}');
     const packageInfo = JSON.parse(localStorage.getItem('packageInfo') || '{}');
@@ -69,7 +72,7 @@ const Receipt: React.FC = () => {
                         <img src={img} alt='' className='w-[5rem]'/>
                     </div>
                     </div>
-                    <p className='font-bold text-center text- my-6'>Tacking: TR2346567898</p>
+                    <p className='font-bold text-center text- my-6'>Tacking: {trackingNumber}</p>
                 </header>
 
                 <div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios'
 
 interface Props {}
 
@@ -52,10 +53,33 @@ const Admin: React.FC<Props> = () => {
       [name]: newValue,
     }));
   };
+  const baseURL = 'https://geds.onrender.com'
+  const url = `${baseURL}/tracking`;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-   
+    
+    const data = {
+      origin:  senderInfo,
+      destination: receiverInfo,
+    };
+
+    try {
+      const resp = await axios.post(
+        url, data, {
+           headers: {
+            'Content-Type' : 'application/json'
+          },
+         })
+
+       if (resp.status === 200) {
+          const trackingNumber = resp.data.trackingNumber;
+          navigate('/Receipt', {state: {trackingNumber}});
+       }
+    } catch (error) {
+      console.error('Error:',error)
+    }
+    
      localStorage.setItem('senderInfo', JSON.stringify(senderInfo));
      localStorage.setItem('receiverInfo', JSON.stringify(receiverInfo));
      localStorage.setItem('packageInfo', JSON.stringify(packageInfo));
@@ -64,7 +88,8 @@ const Admin: React.FC<Props> = () => {
      setReceiverInfo({ name: '', address: '', phone: '', email: '' });
      setPackageInfo({ origin: '', destination: '', quantity: '', weight: '', fragile: false, amount: '' });
 
-     navigate('/Receipt');
+     
+     
   };
 
   return (
